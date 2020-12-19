@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import styles from "./GridItem.module.css";
 
-const GridItem = ({ data }) => {
+const GridItem = ({ item, probeData }) => {
   let [rotate, setRotate] = useState(0);
   useEffect(() => {
-    if (data.direction !== null) {
-      if (data.direction === "right") {
+    if (item.direction !== null) {
+      if (item.direction === "right") {
         setRotate(90);
-      } else if (data.direction === "up") {
+      } else if (item.direction === "up") {
         setRotate(0);
-      } else if (data.direction === "down") {
+      } else if (item.direction === "down") {
         setRotate(180);
-      } else if (data.direction === "left") {
+      } else if (item.direction === "left") {
         setRotate(-90);
       }
     }
@@ -19,9 +19,9 @@ const GridItem = ({ data }) => {
   return (
     <div
       class={styles.container}
-      style={{ background: data.direction !== null ? "red" : "black" }}
+      style={{ background: item.direction !== null ? "red" : "black" }}
     >
-      {data.direction !== null ? (
+      {item.direction !== null ? (
         <i
           className="fas fa-chevron-up"
           style={{ transform: "rotate(" + rotate + "deg)" }}
