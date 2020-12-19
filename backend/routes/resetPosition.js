@@ -1,9 +1,10 @@
-// retorna a posicao da sonda
 
 let express = require("express");
 let resetPosition = express.Router();
 let Probe = require("../probeSchema.js");
 
+// resets the position of the space probe and sets
+// its direction to 'D'
 resetPosition.post("/", async (req, res) => {
   try {
     let resetedProbe = {
@@ -18,7 +19,7 @@ resetPosition.post("/", async (req, res) => {
       { $set: resetedProbe }
     );
 
-    // fetches new position and sends back to the frontend
+    // fetches new position and sends it back to the frontend
     let resetProbePosition = await Probe.find({
       _id: "5fde0a8b3d5372c18431b61a",
     });

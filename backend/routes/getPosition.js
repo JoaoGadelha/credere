@@ -1,9 +1,9 @@
-// retorna a posicao da sonda
 
 let express = require('express');
 let getPosition = express.Router();
 let Probe = require('../probeSchema.js');
 
+// returns the position of the space probe
 getPosition.get('/', async (req, res) => {
 
     try {
