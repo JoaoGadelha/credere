@@ -1,4 +1,3 @@
-
 let express = require("express");
 let resetPosition = express.Router();
 let Probe = require("../probeSchema.js");
@@ -23,8 +22,11 @@ resetPosition.post("/", async (req, res) => {
     let resetProbePosition = await Probe.find({
       _id: "5fde0a8b3d5372c18431b61a",
     });
-    return res.json(resetProbePosition);
-    
+    return res.json({
+      x: resetProbePosition[0].x,
+      y: resetProbePosition[0].y,
+      direction: resetProbePosition[0].direction,
+    });
   } catch (err) {
     return res.json({ message: err });
   }
