@@ -1,41 +1,58 @@
-// retorna a posicao da sonda
-
 let express = require("express");
 let moveProbe = express.Router();
 let Probe = require("../probeSchema.js");
+let functions = require("../functions");
+let walkProbe = functions.walkProbe;
+let turnProbe = functions.turnProbe;
 
+// performs movements on the space probe
 moveProbe.post("/", async (req, res) => {
   try {
-    let resetedProbe = {
-      x: 0,
-      y: 0,
-      direction: "D",
-    };
-
     // instructions for probe movement
-    let deltaX = req.body.Dx;
-    let deltaY = req.body.Dy;
-    let direction = req.body.direction;
+    let movements = req.body.movements;
 
     // fetches the probe position from the database
     let probePosition = await Probe.find({
       _id: "5fde0a8b3d5372c18431b61a",
     });
+    let x = probePosition[0].x;
+    let y = probePosition[0].y;
+    let direction = probePosition[0].direction;
 
-    // calculates the new probe data
-    let updatedProbeData = {
-      x: parseInt(probePosition[0].x, 10) + deltaX,
-      y: parseInt(probePosition[0].y, 10) + deltaY,
-      direction: direction,
-    };
+    // performs the probe movements
+    movements.forEach((item) => {
+      switch (item) {
+        case "M":
+          let newPosition = walkProbe(direction, x, y);
+          x = newPosition.x;
+          y = newPosition.y;
+          break;
+        case "GE":
+          direction = turnProbe(direction, "GE");
+          break;
+        case "GD":
+          direction = turnProbe(direction, "GD");
+          break;
+      }
+    });
+
+    // verifies if the new position exceeds the grid bounds
+    // (the grid is a 5x5 matrix)
+    if (x > 4 || y > 4) {
+      return res.send(
+        "The inputed sequence moves the probe outside of the grid."
+      );
+    }
 
     // updates probe data in the database
+    let updatedProbeData = { x: x, y: y, direction: direction };
     await Probe.updateOne(
       { _id: "5fde0a8b3d5372c18431b61a" },
       { $set: updatedProbeData }
     );
 
-    // fetches new probe data and sends it back to the frontend
+    // fetches the new updated probe position and direction
+    // from the database and sends it back to the frontend
     let receiveNewProbeData = await Probe.find({
       _id: "5fde0a8b3d5372c18431b61a",
     });
