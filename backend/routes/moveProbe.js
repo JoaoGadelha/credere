@@ -40,7 +40,7 @@ moveProbe.post("/", async (req, res) => {
     // (the grid is a 5x5 matrix)
     if (x > 4 || y > 4 || x < 0 || y < 0) {
       return res.send(
-        {message:"The inputed sequence moves the probe outside of the grid."}
+        {error:"The inputed sequence moves the probe outside of the grid."}
       );
     }
 

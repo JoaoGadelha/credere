@@ -1,13 +1,25 @@
 .container {
-    border: solid red 1px;
-    width: 300px;
+    width: 100%;
     height: 300px;
     margin: 0 auto;
     margin-top: 50px;
 }
 
-.input {
-    margin-top: 10px;
-    border: 0;
-    outline: 0;
+.movementsContainer {
+    border: solid red 1px;
+    width: 100%;
+    height: 250px;
+    overflow: auto;
+}
+
+.button {
+    width: 200px;
+}
+
+.p {
+    margin: 10px 0;
+}
+
+.h3 {
+    margin-top: 20px;
 }

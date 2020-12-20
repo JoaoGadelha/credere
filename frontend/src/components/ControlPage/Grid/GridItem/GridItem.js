@@ -1,27 +1,39 @@
 import React, { useEffect, useState } from "react";
 import styles from "./GridItem.module.css";
 
+// renders one cell of the 5x5 grid
 const GridItem = ({ item, probeData }) => {
   let [rotate, setRotate] = useState(0);
+  // flag that indicates if the probe is present in this cell
+  let [renderProbe, setRenderProbe] = useState(false);
+  // the snippet of code inside 'useEffect' runs
+  // whenever the value of 'probeData' varies and
+  // checks if the probe should be rendered here.
   useEffect(() => {
-    if (item.direction !== null) {
-      if (item.direction === "right") {
+    if (
+      parseInt(probeData.x, 10) === item.x &&
+      parseInt(probeData.y, 10) === item.y
+    ) {
+      setRenderProbe(true);
+      if (probeData.direction === "D") {
         setRotate(90);
-      } else if (item.direction === "up") {
+      } else if (probeData.direction === "C") {
         setRotate(0);
-      } else if (item.direction === "down") {
+      } else if (probeData.direction === "B") {
         setRotate(180);
-      } else if (item.direction === "left") {
+      } else if (probeData.direction === "E") {
         setRotate(-90);
       }
+    } else {
+      setRenderProbe(false);
     }
-  }, []);
+  }, [probeData]);
   return (
     <div
-      class={styles.container}
-      style={{ background: item.direction !== null ? "red" : "black" }}
+      className={styles.container}
+      style={{ background: renderProbe ? "red" : "black" }}
     >
-      {item.direction !== null ? (
+      {renderProbe ? (
         <i
           className="fas fa-chevron-up"
           style={{ transform: "rotate(" + rotate + "deg)" }}
@@ -29,6 +41,9 @@ const GridItem = ({ item, probeData }) => {
       ) : (
         ""
       )}
+      <div className={styles.infoBox}>
+        ({item.x},{item.y})
+      </div>
     </div>
   );
 };

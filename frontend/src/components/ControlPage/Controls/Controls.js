@@ -2,18 +2,22 @@ import React from "react";
 import styles from "./Controls.module.css";
 import { turnProbe, moveForward, postData } from "./functions";
 
+// renders the control buttons such as
+// 'turn probe left', 'send instructions
+// to probe' and 'move probe forward'.
 const Controls = ({
   NLmovements,
   setNLmovements,
   instructions,
   setInstructions,
+  setProbeData,
 }) => {
   return (
-    <div class={styles.container}>
+    <div className={styles.container}>
       <button
         onClick={() =>
           turnProbe(
-            "left",
+            "GE",
             NLmovements,
             setNLmovements,
             instructions,
@@ -26,7 +30,7 @@ const Controls = ({
       <button
         onClick={() =>
           turnProbe(
-            "right",
+            "GD",
             NLmovements,
             setNLmovements,
             instructions,
@@ -49,11 +53,40 @@ const Controls = ({
         Move forward
       </button>
       <button
-        onClick={() =>
-          postData("https://credere-backend.herokuapp.com/resetPosition)", {})
-        }
+        onClick={() => {
+          postData("https://credere-backend.herokuapp.com/resetPosition", {});
+          setProbeData({ x: 0, y: 0, direction: "D" });
+        }}
       >
         Reset probe position
+      </button>
+      <button
+        onClick={async () => {
+          let result = await postData(
+            "https://credere-backend.herokuapp.com/moveProbe",
+            { movements: instructions }
+          );
+          // if the backend didn't return
+          // an error message, update
+          // the probe position and direction
+          if (result.error === undefined) {
+            setProbeData(result);
+          }
+          setNLmovements([]);
+          setInstructions([]);
+        }}
+        className={styles.button}
+      >
+        Submit movements
+      </button>
+      <button
+        onClick={() => {
+          setNLmovements([]);
+          setInstructions([]);
+        }}
+        className={styles.button}
+      >
+        Clear movements queue
       </button>
     </div>
   );

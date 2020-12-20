@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Controls from "./Controls/Controls";
 import Grid from "./Grid/Grid";
 import MovementsInputBox from "./MovementsInputBox/MovementsInputBox";
+import MovementsOutputBox from "./MovementsOutputBox/MovementsOutputBox";
+import { setInitialProbeData } from "./functions";
 
-// renderiza a pagina de controle da sonda
+// renders the space probe control page.
 const ControlPage = () => {
-  // stores the position and direction of the space probe
-  let [probeData, setProbeData] = useState({ x: 0, y: 0, direction: "right" });
+  // stores the position and direction of the space probe.
+  let [probeData, setProbeData] = useState({});
   // NLmovements - natural languages movements.
   // stores the movements for the space probe
   // in natural language instructions such as
@@ -19,6 +21,13 @@ const ControlPage = () => {
   // GD - turn space probe to the right
   // M - move forward
   let [instructions, setInstructions] = useState([]);
+  // stores the response message from the probe.
+
+  useEffect(() => {
+    setInitialProbeData(setProbeData);
+  }, []);
+
+  let [probeResponse, setProbeResponse] = useState({});
   return (
     <div>
       <Controls
@@ -26,12 +35,20 @@ const ControlPage = () => {
         setNLmovements={setNLmovements}
         instructions={instructions}
         setInstructions={setInstructions}
+        setProbeData={setProbeData}
       />
-      <Grid probeData={probeData}/>
-      <MovementsInputBox
-        NLmovements={NLmovements}
-        instructions={instructions}
-      />
+      <Grid probeData={probeData} probeResponse={probeResponse} />
+      <div className="movementsBox">
+        <MovementsInputBox
+          NLmovements={NLmovements}
+          setNLmovements={setNLmovements}
+          instructions={instructions}
+        />
+        <MovementsOutputBox
+          probeResponse={probeResponse}
+          instructions={instructions}
+        />
+      </div>
     </div>
   );
 };

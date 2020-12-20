@@ -1,3 +1,4 @@
+// turns the probe left or right
 const turnProbe = (
   turnDirection,
   NLmovements,
@@ -7,7 +8,7 @@ const turnProbe = (
 ) => {
   let NLM_AuxArray = [...NLmovements];
   let inst_auxArray = [...instructions];
-  if (turnDirection === "right") {
+  if (turnDirection === "GD") {
     NLM_AuxArray.push("Turn probe to the right.");
     inst_auxArray.push("GD");
   } else {
@@ -19,6 +20,7 @@ const turnProbe = (
   setInstructions(inst_auxArray);
 };
 
+// move the probe forward
 const moveForward = (
   NLmovements,
   setNLmovements,

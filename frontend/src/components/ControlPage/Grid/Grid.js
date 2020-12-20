@@ -3,8 +3,8 @@ import styles from "./Grid.module.css";
 import { createGrid } from "./functions";
 import GridItem from "./GridItem/GridItem";
 
+// renders a 5x5 grid
 const Grid = ({ probeData }) => {
-  // creates a 5x5 grid
   let n = 25;
   let [grid, setGrid] = useState([]);
 
