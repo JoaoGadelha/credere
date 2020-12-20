@@ -58,4 +58,63 @@ const turnProbe = (direction, turn) => {
   }
 };
 
-module.exports = { walkProbe, turnProbe };
+// transforms the movements to natural language instructions
+// for example, transforms the sequence ['M', 'M', 'M', 'GD'] to
+// 'the probe moved three cells in the y-axis and then turned right'.
+const NLtransform = (movements, direction) => {
+  let message = "The probe ";
+  let countM = 0;
+  let axis = "x";
+  let plural = "";
+
+  movements.forEach((item, i) => {
+    switch (item) {
+      case "M":
+        countM++;
+        break;
+      case "GD":
+        message = message.concat("turned to the right");
+        if (direction === "C" || direction === "B") {
+          axis = "x";
+        } else {
+          axis = "y";
+        }
+        direction = turnProbe(direction, "GD");
+        break;
+      case "GE":
+        message = message.concat("turned to the left");
+        if (direction === "C" || direction === "B") {
+          axis = "x";
+        } else {
+          axis = "y";
+        }
+        direction = turnProbe(direction, "GE");
+        break;
+    }
+    // creates the message for the "M" cases
+    if (movements[i + 1] !== "M") {
+      if (countM > 1) {
+        plural = "s";
+      } else {
+        plural = "";
+      }
+      if (countM > 0) {
+        message = message.concat(
+          "moved " + countM + " cell" + plural + " in the " + axis + "-axis"
+        );
+      }
+      countM = 0;
+    }
+    console.log(movements[i + 1]);
+    if (movements[i + 1] === undefined) {
+      message = message.concat(".");
+    } else {
+      if (message[message.length-2] !== ",") {
+        message = message.concat(", ");
+      }
+    }
+  });
+  return message;
+};
+
+module.exports = { walkProbe, turnProbe, NLtransform };
