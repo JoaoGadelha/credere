@@ -91,6 +91,7 @@ const NLtransform = (movements, direction) => {
         direction = turnProbe(direction, "GE");
         break;
     }
+
     // creates the message for the "M" cases
     if (movements[i + 1] !== "M") {
       if (countM > 1) {
@@ -105,12 +106,17 @@ const NLtransform = (movements, direction) => {
       }
       countM = 0;
     }
-    console.log(movements[i + 1]);
+
+    // inserts a '.' or ', ' or ' and '.
     if (movements[i + 1] === undefined) {
       message = message.concat(".");
     } else {
-      if (message[message.length-2] !== ",") {
-        message = message.concat(", ");
+      if (message[message.length - 2] !== "," && message !== "The probe ") {
+        if (i === movements.length - 2) {
+          message = message.concat(" and ");
+        } else {
+          message = message.concat(", ");
+        }
       }
     }
   });
