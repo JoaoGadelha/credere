@@ -12,6 +12,8 @@ const postData = async (url, data, setResponse) => {
   let jsonResponse = await response.json(); // parses JSON response into native JavaScript objects
 
   setResponse(jsonResponse);
+
+  return jsonResponse;
 };
 
 export { postData };

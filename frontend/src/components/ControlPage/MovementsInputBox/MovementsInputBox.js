@@ -9,13 +9,12 @@ import { postData } from "./functions";
 const MovementsInputBox = ({ NLmovements }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.movementsContainer}>
-        <h3
-          style={{ display: NLmovements.length > 0 ? "none" : "block" }}
-          className={styles.h3}
-        >
-          Movement instructions
-        </h3>
+      <h3
+        className={styles.h3}
+      >
+        Movement instructions
+      </h3>
+      <div className={styles.box}>
         {NLmovements.map((item) => (
           <p className={styles.p}>{item}</p>
         ))}

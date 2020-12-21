@@ -36,7 +36,7 @@ const GridItem = ({ item, probeData }) => {
       {renderProbe ? (
         <i
           className="fas fa-chevron-up"
-          style={{ transform: "rotate(" + rotate + "deg)" }}
+          style={{ transform: "rotate(" + rotate + "deg)", color:'white' }}
         ></i>
       ) : (
         ""

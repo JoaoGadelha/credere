@@ -1,4 +1,11 @@
 // turns the probe left or right
+// turnDirection: indicates the direction the probing must be turned to,
+// assumes values 'GD' or 'GE'.
+// NLmovements: array that stores the instructions for the probe in natural language,
+// such as 'turn probe to the right'.
+// setNLmovements: modifies NLmovements
+// instructions: array that stores the instructions for the probe in code, such as
+// 'GD' for turning the probe right.
 const turnProbe = (
   turnDirection,
   NLmovements,
@@ -18,9 +25,16 @@ const turnProbe = (
 
   setNLmovements(NLM_AuxArray);
   setInstructions(inst_auxArray);
+
+  return { NLmovements: NLM_AuxArray, instructions: inst_auxArray };
 };
 
 // move the probe forward
+// NLmovements: array that stores the instructions for the probe in natural language,
+// such as 'turn probe to the right'.
+// setNLmovements: modifies NLmovements
+// instructions: array that stores the instructions for the probe in code, such as
+// 'GD' for turning the probe right.
 const moveForward = (
   NLmovements,
   setNLmovements,
@@ -34,6 +48,8 @@ const moveForward = (
 
   setNLmovements(NLM_AuxArray);
   setInstructions(inst_auxArray);
+
+  return { NLmovements: NLM_AuxArray, instructions: inst_auxArray };
 };
 
 // used to send a POST message to the server

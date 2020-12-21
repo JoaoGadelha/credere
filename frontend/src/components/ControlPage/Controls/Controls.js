@@ -11,6 +11,7 @@ const Controls = ({
   instructions,
   setInstructions,
   setProbeData,
+  setMovementsOutput
 }) => {
   return (
     <div className={styles.container}>
@@ -71,6 +72,7 @@ const Controls = ({
           // the probe position and direction
           if (result.error === undefined) {
             setProbeData(result);
+            setMovementsOutput(result.NLinstructions);
           }
           setNLmovements([]);
           setInstructions([]);

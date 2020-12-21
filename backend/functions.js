@@ -29,8 +29,8 @@ const walkProbe = (direction, x, y) => {
 // parameters:
 // turn values: "GD" or "GE".
 // direction values : "C","D","B" or "E".
-const turnProbe = (direction, turn) => {
-  switch (turn) {
+const rotateProbe = (direction, rotationDirection) => {
+  switch (rotationDirection) {
     case "GE":
       switch (direction) {
         case "C":
@@ -59,8 +59,9 @@ const turnProbe = (direction, turn) => {
 };
 
 // transforms the movements to natural language instructions
-// for example, transforms the sequence ['M', 'M', 'M', 'GD'] to
-// 'the probe moved three cells in the y-axis and then turned right'.
+// for example, transforms the sequence ['M', 'M', 'M', 'GD'] 
+// starting at the 'C' direction to 'the probe moved three cells
+// in the y-axis and then turned right'.
 const NLtransform = (movements, direction) => {
   let message = "The probe ";
   let countM = 0;
@@ -79,7 +80,7 @@ const NLtransform = (movements, direction) => {
         } else {
           axis = "y";
         }
-        direction = turnProbe(direction, "GD");
+        direction = rotateProbe(direction, "GD");
         break;
       case "GE":
         message = message.concat("turned to the left");
@@ -88,7 +89,7 @@ const NLtransform = (movements, direction) => {
         } else {
           axis = "y";
         }
-        direction = turnProbe(direction, "GE");
+        direction = rotateProbe(direction, "GE");
         break;
     }
 
@@ -123,4 +124,4 @@ const NLtransform = (movements, direction) => {
   return message;
 };
 
-module.exports = { walkProbe, turnProbe, NLtransform };
+module.exports = { walkProbe, rotateProbe, NLtransform };

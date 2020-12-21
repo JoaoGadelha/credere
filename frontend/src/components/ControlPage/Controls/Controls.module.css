@@ -1,5 +1,23 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 50px auto;
+  margin: 20px auto;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.container > * {
+  outline: 0;
+  border: 0;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: blue;
+  color: white;
+  font-weight: bold;
+}
+
+.container > *:hover {
+  background: rgba(0, 0, 255, 0.575);
+  color: black;
 }

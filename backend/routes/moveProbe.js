@@ -3,7 +3,7 @@ let moveProbe = express.Router();
 let Probe = require("../probeSchema.js");
 let functions = require("../functions");
 let walkProbe = functions.walkProbe;
-let turnProbe = functions.turnProbe;
+let rotateProbe = functions.rotateProbe;
 let NLtransform = functions.NLtransform;
 
 // performs movements on the space probe
@@ -34,10 +34,10 @@ moveProbe.post("/", async (req, res) => {
           y = newPosition.y;
           break;
         case "GE":
-          direction = turnProbe(direction, "GE");
+          direction = rotateProbe(direction, "GE");
           break;
         case "GD":
-          direction = turnProbe(direction, "GD");
+          direction = rotateProbe(direction, "GD");
           break;
       }
     });
