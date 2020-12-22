@@ -8,7 +8,7 @@ This project was developed as a job test for Credere</h1>
 
 <img src="./app.png" width="100%">
 
-The app consists of a graphical interface for the control of a space probe landed on Mars. The probe is landed on a 5 x 5 rectangular grid and cannot move over its  bounds. The position of the space probe is represented by a (x,y) coordinate. The probe can face four directions, it rotates only 90ᵒ and moves one  grid cell per movement.
+The app consists of a graphical interface for the control of a space probe landed on Mars. The app controls the position and orientation of the probe, which runs in a backend server and displays the probe data for the user. The probe is landed on a 5 x 5 rectangular grid and cannot move over its  bounds. If the user inputs a sequence of movements for the probe that forces it to move outside of the grid, an error message is returned in the interface, stating that such movement sequence is not permited. The position of the space probe is represented by a (x,y) coordinate. The probe can face four directions, it rotates only 90ᵒ and moves one grid cell per movement, as described by the table below:
 
 | Movements and Directions | Description |
 |--------------------------|-------------|
@@ -34,12 +34,11 @@ There are 6 buttons in total, three for inserting new orders on the stack of ord
 
 ### Grid display
 
-The app displays a 5x5 grid. Each cell in the grid represents a possible coordinate for the position of the probe. The probe is represented by a cell with red background and a white chevron, which represents the probe orientation. The image below represents the configuration of the probe the moment it has landed, in position (0,0) facing the right direction.
+The app displays a 5x5 grid. Each cell in the grid represents a possible coordinate for the position of the probe, which is represented by a cell with red background and a white chevron. This last element represents the probe orientation. The image below represents the configuration of the probe the moment it has landed, in position (0,0) facing the right direction.
 
 <p align="center">
   <img src="./init_configuration.png" width="50%">
 </p>
-
 
 <img src="./result.png" width="100%">
 
