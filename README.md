@@ -47,13 +47,13 @@ The app displays a 5x5 grid. Each cell in the grid represents a possible coordin
 There are two text displays, one for rendering the stack of movements inputed by the user through the input buttons and the other displays a string that describes the movement performed by the probe. For example, if the user has inputed the following sequence - turn left - move forward - move forward - turn probe to the right - move forward, then the first text displays would show:
 
 <p align="center">
-  <img src="./text_display1.png" width="50%">
+  <img src="./text_display1.png" width="20%">
 </p>
 
 And the result for the probe movement would be displayed in the second text display:
 
 <p align="center">
-  <img src="./text_display2.png" width="50%">
+  <img src="./text_display2.png" width="20%">
 </p>
 
 The tags are saved in localStorage, so that the user may refresh or even close the page, and his/her tags will be restored in the next time they visit the app.
