@@ -1,4 +1,4 @@
-<h1 align="center">Brainnco Job Test</h1>
+<h1 align="center">Space Probe Movement Control Interface - Credere</h1>
 <h2 align="center">
 
 This project was developed as a job test for Credere</h1>
