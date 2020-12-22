@@ -63,7 +63,7 @@ And the result for the probe movement displayed in the second text display shoul
 ## Technologies used
 The frontend was built with React.js, while the backend was built in Node.js and Express.js. The app saves the probe info in a Mongo database running in MongoDB Atlas.
 
-The site is live at https://joaoricardotg-credere.netlify.app/, while the backend is hosted in https://credere-backend.herokuapp.com/ (the backend doesn't display anything, it just serves the requests from the frontend. If you want to interact with it, either access the routes explained below through an app or Postman).
+The site is live at https://joaoricardotg-credere.netlify.app/, while the backend is hosted in https://credere-backend.herokuapp.com/ (the backend doesn't display anything, it just serves the requests from the frontend. If you want to interact with it, access the routes explained below through an app or Postman).
 
 ## Backend routes
 
