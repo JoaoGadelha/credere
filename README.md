@@ -23,8 +23,10 @@ The app consists of a graphical interface for the control of a space probe lande
 The control interface for the probe contains 6 buttons, a display for the 5x5 grid and the position and orientation of the probe. Two text output boxes are displayed, one renders the stack of user inputs for the probe and the other displays the movement performed by the probe. 
 
 ## Controller interface
+
 ### Buttons
-There are 6 buttons in total, three for inserting new orders on the stack of order to be sent to the probe, one to reset the probe position, another to send the movements to the probe and another to clear the stack of movements.  The buttons are displayed bellow.
+
+There are 6 buttons in total, three for inserting new orders on the stack of order to be sent to the probe ('turn probe to the left', 'turn probe to the right' and 'move forward'), one to reset the probe position ('reset probe position'), one to send the movements to the probe ('submit movements') and another to clear the stack of movements ('clear movements queue'). The buttons are displayed bellow.
 
 <p align="center">
   <img src="./buttons.png" width="50%">
