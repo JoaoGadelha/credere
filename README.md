@@ -97,7 +97,14 @@ Tests were written for both backend and frontend and they are present in the fil
 
 ## Commands for this app
 
-To install this app, download all the contents of this repository in a specific folder.
+To run this app, you must have node installed. To check if you have it installed, type:
+
+```
+node -v
+```
+If you have it installed, something like ```v10.19.0``` must appear on your console.
+
+To install this app, download all the contents of this repository in a specific folder. Then 
 Inside of it, run:
 
 ### `npm install`
