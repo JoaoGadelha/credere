@@ -56,12 +56,12 @@ And the result for the probe movement would be displayed in the second text disp
   <img src="./text_display2.png" width="20%">
 </p>
 
-The tags are saved in localStorage, so that the user may refresh or even close the page, and his/her tags will be restored in the next time they visit the app.
-
 ## Technologies used
-The frontend was built with React.js consuming the Github API (https://api.github.com/users).
+The frontend was built with React.js, while the backend was built in Node.js and Express.js. The app saves the probe info in a Mongo database running in MongoDB Atlas.
 
-The site is live at https://joaoricardotg-brainnco.netlify.app/
+The site is live at https://joaoricardotg-credere.netlify.app/, while the backend is hosted in https://credere-backend.herokuapp.com/ (the backend doesn't display anything, it just serves the requests from the frontend. If you want to interact with it, either build an app or use Postman with the routes explained below).
+
+## Backend routes
 
 ## Commands for this app
 
