@@ -1,12 +1,26 @@
 <h1 align="center">Brainnco Job Test</h1>
 <h2 align="center">
 
-This project was developed as a job test for Brainn.co</h1>
+This project was developed as a job test for Credere</h1>
 <img src="https://img.shields.io/badge/made%20by-joaoricardotg-blue.svg" >
 
 ## The App
 
-The app consists of a search application for starred Github repositories. You can search for an specific Github profile and this app will fetch all starred repositories marked in it. Then, you may create tags for each starred repository and filter your search based on these tags. This app was built with React.js and is responsive, working in desktop, tablet and phone devices. 
+The app consists of graphical interface for the control of a space probe landed in Mars. The probe is landed on a 5 x 5 rectangular grid and cannot move over its  bounds. The position of the space probe is represented by a (x,y) coordinate. The probe can face four directions, it rotates only 90ᵒ and moves one cell of the grid per movement.
+
+| Movements and Directions | Description |
+|--------------------------|-------------|
+| D| The probe is facing the 'right' direction.|
+| C| The probe is facing the 'up' direction.|
+| B| The probe is facing the 'down' direction.|
+| E| The probe is facing the 'left' direction.|
+| GD| Rotates the probe to the right.|
+| GE| Rotates the probe to the left.|
+| M| Moves the probe one cell forward.|
+
+The probe has landed at the (0,0) coordinate facing the 'D' direction. 
+
+a search application for starred Github repositories. You can search for an specific Github profile and this app will fetch all starred repositories marked in it. Then, you may create tags for each starred repository and filter your search based on these tags. This app was built with React.js and is responsive, working in desktop, tablet and phone devices. 
 
 The main page of the app consists of an input search bar for Github profiles. 
 
