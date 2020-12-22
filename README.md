@@ -121,11 +121,13 @@ After that, to run the app, type the following in the frontend folder to run the
 ### `npm start`
 
 This runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view the frontend it in the browser or [http://localhost:7000](http://localhost:7000) view the backend.
+Open [http://localhost:3000](http://localhost:3000) to view the frontend in the browser or [http://localhost:7000](http://localhost:7000) to view the backend.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+To run the tests, either for backend or frontend, type:
+
 ### `npm test`
 
-Runs all the tests. All tests are named 'functions.test.js', either for the frontend or backend tests.
+All tests are named 'functions.test.js' for both frontend or backend tests.
