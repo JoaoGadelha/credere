@@ -14,7 +14,7 @@ moveProbe.post("/", async (req, res) => {
 
     // fetches the probe position from the database
     let probePosition = await Probe.find({
-      _id: "5fde0a8b3d5372c18431b61a",
+      _id: "5fe25d481001a45f43d80979",
     });
     let x = probePosition[0].x;
     let y = probePosition[0].y;
@@ -53,14 +53,14 @@ moveProbe.post("/", async (req, res) => {
     // updates probe data in the database
     let updatedProbeData = { x: x, y: y, direction: direction };
     await Probe.updateOne(
-      { _id: "5fde0a8b3d5372c18431b61a" },
+      { _id: "5fe25d481001a45f43d80979" },
       { $set: updatedProbeData }
     );
 
     // fetches the new updated probe position and direction
     // from the database and sends it back to the frontend
     let receiveNewProbeData = await Probe.find({
-      _id: "5fde0a8b3d5372c18431b61a",
+      _id: "5fe25d481001a45f43d80979",
     });
     return res.json({
       NLinstructions: NLinstructions,

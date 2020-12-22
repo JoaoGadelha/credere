@@ -30,7 +30,8 @@ app.use("/moveProbe", moveProbe);
 
 //database
 mongoose.connect(
-  process.env.MONGODB_URI,
+  //process.env.MONGODB_URI,
+  'mongodb+srv://asdf:12345678%40@cluster0.bmf6v.mongodb.net/credere?retryWrites=true&w=majority',
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log("Connected to DB.");
@@ -40,6 +41,6 @@ mongoose.connect(
 process.on("SIGTERM", shutDown);
 process.on("SIGINT", shutDown);
 
-app.listen(process.env.PORT || 5000, () =>
-  console.log("Server is running in port " + (process.env.PORT || 5000))
+app.listen(process.env.PORT || 7000, () =>
+  console.log("Server is running in port " + (process.env.PORT || 7000))
 );
