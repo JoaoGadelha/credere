@@ -10,7 +10,7 @@ This project was developed as a job test for Credere</h1>
 
 The app consists of a graphical interface for the control of a space probe landed on Mars. The app controls the position and orientation of the probe, which runs in a backend server and displays the probe data for the user. The probe is landed on a 5 x 5 rectangular grid and cannot move over its  bounds. If the user inputs a sequence of movements for the probe that forces it to move outside of the grid, an error message is returned in the interface, stating that such movement sequence is not permited. The position of the space probe is represented by a (x,y) coordinate. The probe can face four directions, it rotates only 90ᵒ and moves one grid cell per movement, as described by the table below:
 
-<p align="center>
+<p align="center">
 | Movements and Directions | Description |
 |--------------------------|-------------|
 | D| The probe is facing the 'right' direction.|
