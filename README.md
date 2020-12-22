@@ -48,13 +48,13 @@ There are two text displays, one for rendering the stack of movements inputed by
 ```
 turn left - move forward - move forward - turn probe to the right - move forward
 ```
-then the first text display would show:
+then the first text display will show:
 
 <p align="center">
   <img src="./text_display1.png" width="20%">
 </p>
 
-And the result for the probe movement would be displayed in the second text display:
+And the result for the probe movement displayed in the second text display should be:
 
 <p align="center">
   <img src="./text_display2.png" width="20%">
