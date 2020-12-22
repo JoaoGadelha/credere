@@ -6,7 +6,7 @@ This project was developed as a job test for Credere</h1>
 
 ## The App
 
-The app consists of graphical interface for the control of a space probe landed in Mars. The probe is landed on a 5 x 5 rectangular grid and cannot move over its  bounds. The position of the space probe is represented by a (x,y) coordinate. The probe can face four directions, it rotates only 90ᵒ and moves one cell of the grid per movement.
+The app consists of a graphical interface for the control of a space probe landed on Mars. The probe is landed on a 5 x 5 rectangular grid and cannot move over its  bounds. The position of the space probe is represented by a (x,y) coordinate. The probe can face four directions, it rotates only 90ᵒ and moves one  grid cell per movement.
 
 | Movements and Directions | Description |
 |--------------------------|-------------|
@@ -24,7 +24,7 @@ a search application for starred Github repositories. You can search for an spec
 
 The main page of the app consists of an input search bar for Github profiles. 
 
-<img src="./homepage.png" width="100%">
+<img src="./app.png" width="100%">
 
 The user inputs the name of a profile and the app returns all the starred repositories for that search. The user can add, edit and remove tags in each search result, as well as filter the search by tags.
 
