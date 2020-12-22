@@ -22,6 +22,8 @@ The app consists of a graphical interface for the control of a space probe lande
 
 The probe has landed at the (0,0) coordinate facing the 'D' direction. 
 
+<img src="./init_configuration.png" width="100%">
+
 a search application for starred Github repositories. You can search for an specific Github profile and this app will fetch all starred repositories marked in it. Then, you may create tags for each starred repository and filter your search based on these tags. This app was built with React.js and is responsive, working in desktop, tablet and phone devices. 
 
 The main page of the app consists of an input search bar for Github profiles. 
