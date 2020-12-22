@@ -102,23 +102,30 @@ To run this app, you must have node installed. To check if you have it installed
 ```
 node -v
 ```
-If you have it installed, something like ```v10.19.0``` must appear on your console.
+If you have it installed, something like ```v10.19.0``` must appear on your console. Then, download all the content of this repository in a specific folder. To install the frontend, while inside your folder, type the following in the console: 
 
-To install this app, download all the contents of this repository in a specific folder. Then 
-Inside of it, run:
+```
+cd  frontend
+npm install
+```
+This will install all the dependencies necessary to run the app.
+For the backend, do the same:
 
-### `npm install`
+```
+cd  backend
+npm install
+```
 
-After that, to run the app, run:
+After that, to run the app, type the following in the frontend folder to run the frontend app, or in the backend folder to run the backend app:
 
 ### `npm start`
 
 This runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view the frontend it in the browser or [http://localhost:7000](http://localhost:7000) view the backend.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 ### `npm test`
 
-Runs all the tests. The tests files are present in the 'Functions' folder.
+Runs all the tests. All tests are named 'functions.test.js', either for the frontend or backend tests.
