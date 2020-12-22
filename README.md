@@ -24,7 +24,7 @@ The control interface for the probe contains 6 buttons, a display for the 5x5 gr
 
 ## Controller interface
 ### Buttons
-The buttons for the controller interface are displayed bellow.
+There are 6 buttons in total, three for inserting new orders on the stack of order to be sent to the probe, one to reset the probe position, another to send the movements to the probe and another to clear the stack of movements.  The buttons are displayed bellow.
 
 <p align="center">
   <img src="./buttons.png" width="50%">
