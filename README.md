@@ -44,7 +44,11 @@ The app displays a 5x5 grid. Each cell in the grid represents a possible coordin
 
 ### Text displays
 
-There are two text displays, one for rendering the stack of movements inputed by the user through the input buttons and the other displays a string that describes the movement performed by the probe. For example, if the user has inputed the following sequence with the probe starting at (0,0) facing the right direction - turn left - move forward - move forward - turn probe to the right - move forward, then the first text display would show:
+There are two text displays, one for rendering the stack of movements inputed by the user through the input buttons and the other displays a string that describes the movement performed by the probe. For example, let's use the following sequence, with the probe starting at (0,0) facing the right direction: 
+```
+turn left - move forward - move forward - turn probe to the right - move forward
+```
+then the first text display would show:
 
 <p align="center">
   <img src="./text_display1.png" width="20%">
