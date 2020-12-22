@@ -80,6 +80,12 @@ Can either return an object with the new position of the probe or an error messa
     "direction": "D"
 }
 ```
+When an invalid sequence of movements is sent to the backend, it returns with the following error message:
+```
+{
+    "error": "The inputed sequence moves the probe outside of the grid."
+}
+```
 
 ## Tests
 
