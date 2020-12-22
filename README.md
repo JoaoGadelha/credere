@@ -22,7 +22,7 @@ The app consists of a graphical interface for the control of a space probe lande
 | M| Moves the probe one cell forward.|
 
 
-The control interface for the probe contains 6 buttons, a display for the 5x5 grid and the position and orientation of the probe. Two text output boxes are displayed, one renders the stack of user inputs for the probe and the other displays the movement performed by the probe. 
+The control interface for the probe contains 6 buttons, a display for the 5x5 grid and the position and orientation of the probe. Two textfields are displayed, one renders the stack of user inputs for the probe and the other displays the movement performed by the probe. 
 
 ## Controller interface
 
@@ -42,7 +42,19 @@ The app displays a 5x5 grid. Each cell in the grid represents a possible coordin
   <img src="./init_configuration.png" width="50%">
 </p>
 
-<img src="./result.png" width="100%">
+### Text displays
+
+There are two text displays, one for rendering the stack of movements inputed by the user through the input buttons and the other displays a string that describes the movement performed by the probe. For example, if the user has inputed the following sequence - turn left - move forward - move forward - turn probe to the right - move forward, then the first text displays would show:
+
+<p align="center">
+  <img src="./text_display1.png" width="50%">
+</p>
+
+And the result for the probe movement would be displayed in the second text display:
+
+<p align="center">
+  <img src="./text_display2.png" width="50%">
+</p>
 
 The tags are saved in localStorage, so that the user may refresh or even close the page, and his/her tags will be restored in the next time they visit the app.
 
