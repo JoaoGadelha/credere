@@ -26,13 +26,11 @@ The probe has landed at the (0,0) coordinate facing the 'D' direction.
   <img src="./init_configuration.png" width="50%">
 </p>
 
-a search application for starred Github repositories. You can search for an specific Github profile and this app will fetch all starred repositories marked in it. Then, you may create tags for each starred repository and filter your search based on these tags. This app was built with React.js and is responsive, working in desktop, tablet and phone devices. 
+The control interface for the probe contains 6 buttons, a display for the 5x5 grid and the position and orientation of the probe. Two text output boxes are displayed, one renders the stack of user inputs for the probe and the other displays the movement performed by the probe. 
 
-The main page of the app consists of an input search bar for Github profiles. 
-
-
-
-The user inputs the name of a profile and the app returns all the starred repositories for that search. The user can add, edit and remove tags in each search result, as well as filter the search by tags.
+## Controller interface
+### Buttons
+The buttons for the controller interface are displayed bellow.
 
 <img src="./result.png" width="100%">
 
