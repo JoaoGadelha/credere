@@ -63,6 +63,19 @@ The site is live at https://joaoricardotg-credere.netlify.app/, while the backen
 
 ## Backend routes
 
+### GET /getPosition
+Returns an object that informs the frontend of the current position and orientation of the probe, for example, if the probe is is position (2,2) facing the 'C' direction, the route returns {x:2, y:2, direction:'C'}.
+
+### POST /resetPosition
+Returns the object {x:0, y:0, direction:'D'}, confirming that the probe is on its initial position and direction.
+
+### POST /moveProbe
+Can either return an object with the new position of the probe or an error message in case the inputed sequence moves the probe out of the 5x5 grid. Also, in case the probe didn't return an error, a string describing the movement of the probe is returned to the frontend. A valid movement sequence is represented by an array. So for example, if the backend receives ["M", "M", "GE", "M", "GD"] and the probe is in position (0,0) facing the right direction, it must move two cells on the x-axis to the right, turn left, move up one cell and turn right, returning the following object to the interface { 
+
+There are 3 routes that the frontend can interact with. One returns the position and orientation of the probe, the other resets its position to the (0,0) coordinate facing the right direction and the last route receives a sequence of movements and checks if the sequence actually doesn't throw the probe out of the grid. If the sequence is accepted, then the probe follows the sequence and returns a string describing its movements. Otherwise, an error message is returned to the frontend, explaining the error.
+
+
+
 ## Commands for this app
 
 To install this app, download all the contents of this repository in a specific folder.
