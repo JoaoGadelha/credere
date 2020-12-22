@@ -7,7 +7,6 @@ describe("Test for the 'postData' function", () => {
       // mock function
       let setResponse = jest.fn();
       let response = await postData(url, data, setResponse);
-      console.log(response);
       let responseKeys = Object.keys(response);
       expect(responseKeys.includes("x")).toBe(true);
       expect(responseKeys.includes("y")).toBe(true);
