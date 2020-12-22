@@ -81,9 +81,9 @@ Can either return an object with the new position of the probe or an error messa
 }
 ```
 
-There are 3 routes that the frontend can interact with. One returns the position and orientation of the probe, the other resets its position to the (0,0) coordinate facing the right direction and the last route receives a sequence of movements and checks if the sequence actually doesn't throw the probe out of the grid. If the sequence is accepted, then the probe follows the sequence and returns a string describing its movements. Otherwise, an error message is returned to the frontend, explaining the error.
+## Tests
 
-
+Tests were written for both the backend and frontend and they presents in the files 'functions.test.js'. The tests were performed with Jest, a javascript testing framework. Each test is described in their own files.
 
 ## Commands for this app
 
