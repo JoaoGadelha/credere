@@ -89,7 +89,7 @@ When an invalid sequence of movements is sent to the backend, it returns with th
 
 ## Tests
 
-Tests were written for both the backend and frontend and they presents in the files 'functions.test.js'. The tests were performed with Jest, a javascript testing framework. Each test is described in their own files.
+Tests were written for both backend and frontend and they are present in the files 'functions.test.js'. The tests were performed with Jest, a javascript testing framework. Each test is described in their own file.
 
 ## Commands for this app
 
