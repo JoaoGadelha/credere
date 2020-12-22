@@ -70,7 +70,16 @@ Returns an object that informs the frontend of the current position and orientat
 Returns the object {x:0, y:0, direction:'D'}, confirming that the probe is on its initial position and direction.
 
 ### POST /moveProbe
-Can either return an object with the new position of the probe or an error message in case the inputed sequence moves the probe out of the 5x5 grid. Also, in case the probe didn't return an error, a string describing the movement of the probe is returned to the frontend. A valid movement sequence is represented by an array. So for example, if the backend receives ["M", "M", "GE", "M", "GD"] and the probe is in position (0,0) facing the right direction, it must move two cells on the x-axis to the right, turn left, move up one cell and turn right, returning the following object to the interface { 
+Can either return an object with the new position of the probe or an error message in case the inputed sequence moves the probe out of the 5x5 grid. Also, in case the probe didn't return an error, a string describing the movement of the probe is returned to the frontend. A movement sequence is represented by an array. So for example, if the backend receives ["M", "M", "GE", "M", "GD"] and the probe is in position (0,0) facing the right direction, it must move two cells on the x-axis to the right, turn left, move up one cell and turn right, returning the following object to the interface 
+
+```
+{
+    "NLinstructions": "The probe moved 2 cells in the x-axis, turned to the left, moved 1 cell in the y-axis and turned to the right.",
+    "x": "2",
+    "y": "1",
+    "direction": "D"
+}
+```
 
 There are 3 routes that the frontend can interact with. One returns the position and orientation of the probe, the other resets its position to the (0,0) coordinate facing the right direction and the last route receives a sequence of movements and checks if the sequence actually doesn't throw the probe out of the grid. If the sequence is accepted, then the probe follows the sequence and returns a string describing its movements. Otherwise, an error message is returned to the frontend, explaining the error.
 
