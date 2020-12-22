@@ -20,17 +20,22 @@ The app consists of a graphical interface for the control of a space probe lande
 | GE| Rotates the probe to the left.|
 | M| Moves the probe one cell forward.|
 
+The control interface for the probe contains 6 buttons, a display for the 5x5 grid and the position and orientation of the probe. Two text output boxes are displayed, one renders the stack of user inputs for the probe and the other displays the movement performed by the probe. 
+
+## Controller interface
+### Buttons
+The buttons for the controller interface are displayed bellow.
+
+<p align="center">
+  <img src="./buttons.png" width="50%">
+</p>
+
 The probe has landed at the (0,0) coordinate facing the 'D' direction. 
 
 <p align="center">
   <img src="./init_configuration.png" width="50%">
 </p>
 
-The control interface for the probe contains 6 buttons, a display for the 5x5 grid and the position and orientation of the probe. Two text output boxes are displayed, one renders the stack of user inputs for the probe and the other displays the movement performed by the probe. 
-
-## Controller interface
-### Buttons
-The buttons for the controller interface are displayed bellow.
 
 <img src="./result.png" width="100%">
 
